@@ -1,0 +1,44 @@
+{
+  "gauges": [
+    { "label": "Tone Fidelity", "value": 0.86, "trend": "up" },
+    { "label": "IP Risk", "value": 0.18, "trend": "down" },
+    { "label": "Inclusivity", "value": 0.78, "trend": "up" },
+    { "label": "Predicted Lift", "value": 0.21, "trend": "up" },
+    { "label": "Authenticity", "value": 0.34, "trend": "down" }
+  ],
+  "alerts": [
+    { "type": "authenticity", "message": "Hand artifacts detected on Neon Skyline headline." },
+    { "type": "ip", "message": "Restricted landmark referenced in hero shot." },
+    { "type": "tone", "message": "Copy leans too aggressive for Pixel Riot APAC." }
+  ],
+  "recentAssets": [
+    {
+      "id": "asset-123",
+      "name": "Neon Skyline Drop",
+      "brand": "Pixel Riot",
+      "type": "image",
+      "status": "flagged",
+      "score": 0.62,
+      "updated_at": "2024-05-04T08:15:00Z"
+    },
+    {
+      "id": "asset-215",
+      "name": "Creator Spotlight CTA",
+      "brand": "Pixel Riot",
+      "type": "text",
+      "status": "ready",
+      "score": 0.84,
+      "updated_at": "2024-05-04T07:42:00Z"
+    },
+    {
+      "id": "asset-099",
+      "name": "Event Trailer",
+      "brand": "Acme Studios",
+      "type": "video",
+      "status": "review",
+      "score": 0.71,
+      "updated_at": "2024-05-03T22:55:00Z"
+    }
+  ],
+  "updated_at": "2024-05-04T08:30:00Z"
+}

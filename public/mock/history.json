@@ -1,0 +1,42 @@
+[
+  {
+    "id": "asset-123",
+    "brand": "Pixel Riot",
+    "type": "image",
+    "status": "flagged",
+    "score": 0.62,
+    "created_at": "2024-05-04T07:45:00Z"
+  },
+  {
+    "id": "asset-215",
+    "brand": "Pixel Riot",
+    "type": "text",
+    "status": "ready",
+    "score": 0.84,
+    "created_at": "2024-05-04T07:10:00Z"
+  },
+  {
+    "id": "asset-099",
+    "brand": "Acme Studios",
+    "type": "video",
+    "status": "review",
+    "score": 0.71,
+    "created_at": "2024-05-03T22:30:00Z"
+  },
+  {
+    "id": "asset-077",
+    "brand": "Glow Collective",
+    "type": "image",
+    "status": "ready",
+    "score": 0.9,
+    "created_at": "2024-05-03T18:05:00Z"
+  },
+  {
+    "id": "asset-044",
+    "brand": "Pixel Riot",
+    "type": "video",
+    "status": "flagged",
+    "score": 0.58,
+    "created_at": "2024-05-03T15:10:00Z"
+  }
+]

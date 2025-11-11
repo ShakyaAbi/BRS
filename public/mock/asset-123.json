@@ -1,0 +1,40 @@
+{
+  "id": "asset-123",
+  "title": "Neon Skyline Drop",
+  "preview": {
+    "type": "image",
+    "src": "/mock/assets/asset-123.svg",
+    "alt": "Vibrant neon skyline with floating typography"
+  },
+  "scores": {
+    "tone": 0.82,
+    "ip_risk": 0.12,
+    "inclusivity": 0.76,
+    "lift": 0.09,
+    "authenticity": 0.31
+  },
+  "alerts": [
+    { "type": "authenticity", "message": "Image feels uncanny (hand artifacts)." },
+    { "type": "ip", "message": "Probable restricted skyline silhouette detected." }
+  ],
+  "edits": [
+    { "message": "Dial back hyperbole to align with APAC tone guidelines.", "severity": "medium" },
+    { "message": "Swap skyline reference with approved Pixel Riot city list.", "severity": "high" },
+    { "message": "Add inclusive CTA mentioning creators across regions.", "severity": "low" }
+  ],
+  "alternates": [
+    { "type": "text", "suggestion": "A calmer, benefit-first headline that spotlights creator wins." },
+    { "type": "image", "suggestion": "Use Pixel Riot Arcade interior hero vs. contested skyline." }
+  ],
+  "evidence": [
+    { "thumbnail": "/mock/crops/logo.svg", "label": "Logo overlap" },
+    { "thumbnail": "/mock/crops/hand.svg", "label": "Hand artifact" }
+  ],
+  "metadata": {
+    "brand": "Pixel Riot",
+    "market": "APAC",
+    "type": "image",
+    "owner": "K. Moreno",
+    "created_at": "2024-05-04T07:45:00Z"
+  }
+}

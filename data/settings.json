@@ -1,0 +1,16 @@
+{
+  "weights": {
+    "tone": 0.3,
+    "ip_risk": 0.25,
+    "inclusivity": 0.15,
+    "lift": 0.15,
+    "authenticity": 0.15
+  },
+  "allow_list": ["Pixel Riot Arcade", "Creator Mode"],
+  "deny_list": ["Empire Skyline", "NeoRio Monorail"],
+  "notifications": {
+    "slack": true,
+    "email": false,
+    "webhook_url": "https://hooks.pixelriot.ai/brs"
+  }
+}

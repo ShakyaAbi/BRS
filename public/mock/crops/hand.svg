@@ -1,0 +1,6 @@
+<svg width="160" height="120" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="120" rx="18" fill="#0f172a" />
+  <path d="M50 90 C45 70 50 50 58 35 C60 30 66 30 70 35 L78 50 L85 32 C88 26 96 28 98 34 L110 70" stroke="#f97316" stroke-width="10" fill="none" stroke-linecap="round" />
+  <circle cx="115" cy="76" r="18" fill="#e11d48" opacity="0.6" />
+  <text x="50%" y="100" text-anchor="middle" fill="#cbd5f5" font-size="12" font-family="'Inter',sans-serif">Artifact</text>
+</svg>

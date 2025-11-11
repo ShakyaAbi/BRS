@@ -1,0 +1,27 @@
+[
+  {
+    "id": "audit-501",
+    "asset_id": "asset-123",
+    "model_version": "auth-v0.7",
+    "decision": "flagged",
+    "owner": "Pixel Riot QA",
+    "timestamp": "2024-05-04T08:20:00Z",
+    "notes": "Evidence stored for authenticity review.",
+    "evidence": [
+      { "label": "Hand artifact", "url": "/mock/crops/hand.svg" },
+      { "label": "Skyline overlap", "url": "/mock/crops/logo.svg" }
+    ]
+  },
+  {
+    "id": "audit-498",
+    "asset_id": "asset-044",
+    "model_version": "ip-v1.2",
+    "decision": "requires_review",
+    "owner": "Legal",
+    "timestamp": "2024-05-03T16:05:00Z",
+    "notes": "Verify skyline usage for LATAM launch.",
+    "evidence": [
+      { "label": "Landmark contour", "url": "/mock/crops/logo.svg" }
+    ]
+  }
+]

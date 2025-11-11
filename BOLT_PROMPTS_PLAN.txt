@@ -1,0 +1,108 @@
+BOLT.NEW – MASTER PROMPT PLAN (BRS Dashboard, Next.js)
+
+HOW TO USE
+- Start with the “Starter Prompt” in a fresh Bolt session to scaffold Next.js App Router layout, tokens, and routes.
+- Then run each “Session Prompt” in order, exporting only changed files each time.
+- Keep the Style Tokens and Data Schema snippets handy; paste them into later prompts for consistency.
+
+STARTER PROMPT (PASTE INTO BOLT)
+You are designing a production‑ready Next.js (App Router) + TypeScript + Tailwind dashboard for an AI “creative QA” tool called Brand Resonance Synth (BRS).
+Requirements:
+- Tech: Next.js 14+ (App Router), TypeScript, Tailwind, ESLint, next-themes for dark mode (`class` strategy).
+- IA/Routes: /brs/dashboard, /brs/asset/[id], /brs/submit, /brs/history, /brs/settings, /brs/audits.
+- Layout: `app/layout.tsx` (root HTML), `app/brs/layout.tsx` (persistent left sidebar + top nav), page files under `app/brs/*/page.tsx`.
+- Components: default to Server Components; mark interactive pieces with `"use client"`.
+- Accessibility: landmarks, focus order, keyboard nav, color contrast.
+- Components must be responsive (md, lg breakpoints) and accept props (no hard‑coded copy).
+
+Deliver:
+1) App Router shell with routes above and stub pages.
+2) `components/brs/*`: Sidebar, TopNav, ScoreGauge, AlertList, EditList, EvidenceGrid, DataTable.
+3) Apply the following Style Tokens and Data Schema throughout.
+
+Style Tokens:
+[STYLE_TOKENS]
+
+Data Schema:
+[DATA_SCHEMA]
+
+Place files under `app/brs/...` and `components/brs/...`. Export all created files.
+
+—
+
+STYLE TOKENS (PASTE AS [STYLE_TOKENS] IN PROMPTS)
+- Spacing scale: 4, 8, 12, 16, 20, 24
+- Type scale: sm, base, lg, xl, 2xl
+- Color roles: surface, subtle, primary, warning, danger, success (light/dark variants via Tailwind classes)
+- Shadows: xs, sm, md (subtle)
+- Radius: sm (6px), md (10px)
+- Motion: fast (100ms), base (160ms)
+
+DATA SCHEMA (PASTE AS [DATA_SCHEMA] IN PROMPTS)
+Scorecard JSON shape:
+{
+  "scores": {"tone":0..1, "ip_risk":0..1, "inclusivity":0..1, "lift":-1..+1, "authenticity":0..1},
+  "alerts": [{"type":"authenticity|ip|tone|inclusive","message":"..."}],
+  "edits": [{"message":"...","severity":"low|medium|high"}],
+  "alternates": [{"type":"text|image","suggestion":"..."}],
+  "evidence": [{"thumbnail":"/path.png","label":"logo crop"}],
+  "metadata": {"brand":"...","market":"APAC|EMEA|NA","type":"text|image|video"}
+}
+
+—
+
+SESSION PROMPTS (RUN IN ORDER)
+
+Session 1 — Layout + Tokens
+Create a Next.js App Router shell:
+- Files: `app/layout.tsx` (html/body with ThemeProvider), `app/brs/layout.tsx` (Sidebar + TopNav + main content), and pages: `app/brs/dashboard/page.tsx`, `app/brs/asset/[id]/page.tsx`, `app/brs/submit/page.tsx`, `app/brs/history/page.tsx`, `app/brs/settings/page.tsx`, `app/brs/audits/page.tsx`.
+- Components in `components/brs/*`: Sidebar, TopNav, ScoreGauge, AlertList, EditList, EvidenceGrid, DataTable.
+- Use `next-themes` with `attribute="class"` for dark mode. Apply [STYLE_TOKENS]. Export changed files only.
+
+Session 2 — Dashboard + Gauges
+On `app/brs/dashboard/page.tsx`:
+- Add five `ScoreGauge` components (props: label, value 0..1, trend, size).
+- Add a “Recent Alerts” panel using `AlertList` bound to `/mock/dashboard.json` in `public/`.
+- Responsive grid cards; paste [STYLE_TOKENS] + [DATA_SCHEMA]. Export changed files only.
+
+Session 3 — Asset Detail
+On `app/brs/asset/[id]/page.tsx`:
+- Header: asset preview (image/video/text), score summary (five gauges), metadata chips.
+- Tabs: Tone, IP, Inclusive, Lift, Authenticity → each shows `AlertList`, `EditList`, and `EvidenceGrid`.
+- Alternates panel with “Apply” (client component). Bind to `/mock/asset-123.json` first. Paste [STYLE_TOKENS] + [DATA_SCHEMA]. Export changed files only.
+
+Session 4 — Submit Flow
+On `app/brs/submit/page.tsx` (client component):
+- URL/file input, type selector (text/image/video), brand/audience selectors, submit button.
+- On submit: show `job_id`, link to History, toasts via a light wrapper.
+- Keep server boundaries clean; paste [STYLE_TOKENS] + [DATA_SCHEMA]. Export changed files only.
+
+Session 5 — History & Audits
+- `app/brs/history/page.tsx`: `DataTable` with filters (brand/market/type/status), pagination, row link to Asset Detail.
+- `app/brs/audits/page.tsx`: table with model version, timestamps, detail drawer with evidence.
+- Use `public/mock/*.json`. Export changed files only.
+
+Session 6 — Settings
+On `app/brs/settings/page.tsx` (client component):
+- Sliders for pillar weights (tone, ip, inclusivity, lift, authenticity) 0..1; show weighted sum.
+- JSON editors for allow/deny lists with validation and reset. Load/Save to mock endpoints.
+- Export changed files only.
+
+Session 7 — Polish & Motion
+- Subtle route transitions and gauge reveal animations (≤100ms).
+- A11y: focus order, skip links, ARIA labels on gauges/tabs.
+- Empty/loading/error states for all data views.
+
+REGEN/ADJUSTMENT PROMPTS (USE SPARINGLY)
+- “Refactor Sidebar to support section headings and collapsible groups; preserve routes and classes.”
+- “Normalize card paddings to spacing 16; reduce mobile vertical rhythm by 20%.”
+- “Align colors with [STYLE_TOKENS] roles; remove hardcoded hex codes.”
+
+CREDIT‑SAVING TIPS
+- Batch instructions; avoid micro‑edits. Lock tokens in Session 1.
+- Mock first (public/mock), wire real API after layouts stabilize.
+- Export only changed files. Freeze good components; tweak CSS locally.
+- Reuse [STYLE_TOKENS] and [DATA_SCHEMA] in every prompt to keep Bolt consistent.
+
+OPTIONAL (NEXT API ROUTE HANDLERS FOR MOCKS)
+- Add `app/api/mock/dashboard/route.ts` and `app/api/mock/asset/[id]/route.ts` returning static JSON to simulate backend while designing.
